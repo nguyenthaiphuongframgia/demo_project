@@ -1,8 +1,9 @@
+
 <li id="<%= entry.id %>">
   <%= link_to gravatar_for(entry.user, size: 50), entry.user %>
   <span class="user"><%= link_to entry.user.name, entry.user %></span>
   <span class="content">
-  <%= entry.title %>
+  <p><b><%= entry.title %></b></p>
   <%= entry.body %>
   <%= image_tag entry.picture.url if entry.picture? %>
   </span>
@@ -13,4 +14,7 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+
+
+  </div>
 </li>

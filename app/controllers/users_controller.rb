@@ -7,12 +7,17 @@ class UsersController < ApplicationController
 
   def index
     # @users = User.where(activated: FILL_IN).paginate(page: params[:page])
-     @users = User.paginate(page: params[:page])
+     @users = User.paginate(page: params[:page]).all
+     
+     #@entries = User.entries.paginate(page: params[:page])
+    #  @user = User.find_by id: params[:id]
+    #  @users = @user.entries.paginate(page: params[:page])
   end
 
   def show
     @user = User.find_by id: params[:id]
-    @entrys = @user.entrys.paginate(page: params[:page])
+    @entries = @user.entries.paginate(page: params[:page])
+    #@entries = @user.entries.build
     #redirect_to root_url and return unless FILL_IN
 
     unless @user
